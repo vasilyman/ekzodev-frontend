@@ -1,24 +1,20 @@
 # cp-2022-frontend-ekzodev
 
-## Project setup
+## Демо проекта
+[ekzodev.remonstro.ru](https://ekzodev.remonstro.ru)
+
+
+## Установка
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск локально
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Сборка
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
