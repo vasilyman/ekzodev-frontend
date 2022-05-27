@@ -13,7 +13,7 @@ if (isMocked()) {
   mockWorker.start({
     serviceWorker: {
       options: {
-        scope: 'http://localhost:8080/',
+        scope: '/',
       },
     },
   });
