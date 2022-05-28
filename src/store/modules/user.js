@@ -14,7 +14,7 @@ export default {
   },
 
   actions: {
-    async setUser({ commit }, id) {
+    async fetchUser({ commit }, id) {
       try {
         const res = await UserApi.getUser(id);
         commit('setUser', res.data);

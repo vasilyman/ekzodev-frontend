@@ -40,7 +40,7 @@ export default {
     this.checkAuth();
   },
   methods: {
-    ...mapActions('User', ['setUser']),
+    ...mapActions('User', ['fetchUser']),
     checkAuth() {
       if (!this.getIsAuthenticated) {
         this.setUser(1);
