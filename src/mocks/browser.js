@@ -1,4 +1,5 @@
 import { setupWorker } from 'msw';
+import { isMockedProfile, isMockedReport } from '@/utils/env';
 
 import userHandler from './user/userHandler';
 import ProfileDataQualityColumnsHandler from './ProfileDataQuality/ProfileDataQualityColumnsHandler';
@@ -10,12 +11,22 @@ import ReportDataQualityListHandler from './ReportDataQuality/ReportDataQualityL
 
 const handlers = [
   userHandler,
-  ProfileDataQualityColumnsHandler,
-  ProfileDataQualityListHandler,
-  ProfileDataQualityItemHandler,
   RegionsHandler,
+  ProfileDataQualityColumnsHandler,
   ReportDataQualityColumnsHandler,
-  ReportDataQualityListHandler,
 ];
+
+if (isMockedProfile()) {
+  handlers.push(
+    ProfileDataQualityListHandler,
+    ProfileDataQualityItemHandler,
+  );
+}
+
+if (isMockedReport()) {
+  handlers.push(
+    ReportDataQualityListHandler,
+  );
+}
 
 export default setupWorker(...handlers);
