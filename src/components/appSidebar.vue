@@ -3,6 +3,8 @@
     v-model="drawer"
     app
     clipped
+    :mobile-breakpoint="0"
+    :temporary="$vuetify.breakpoint.smAndDown"
   >
     <slot />
   </v-navigation-drawer>
