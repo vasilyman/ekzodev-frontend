@@ -1,13 +1,13 @@
 <template>
   <div>
     <v-list-item>
-      <v-list-item-avatar color="grey">
-        <v-img v-if="getAvatar" :src="getAvatar"></v-img>
+      <v-list-item-avatar color="primary">
+        <v-img v-if="getAvatar" :src="getAvatar" outlined></v-img>
         <div v-else>{{ getFullname | getInitials }}</div>
       </v-list-item-avatar>
-      <v-list-item-content v-if="getFullname">
+      <!-- <v-list-item-content v-if="getFullname">
         {{ getFullname | getInitials}}
-      </v-list-item-content>
+      </v-list-item-content> -->
     </v-list-item>
   </div>
 </template>

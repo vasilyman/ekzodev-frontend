@@ -8,10 +8,16 @@
       <template #user>
         <AppUser />
       </template>
+      <template #menu>
+        <HorizontalMenu :items="getMenu" text />
+      </template>
     </AppHeader>
-    <v-main>
-      <router-view/>
+    <v-main class="grey lighten-4">
+      <v-container grid-list-xs class="min-100">
+         <router-view/>
+      </v-container>
     </v-main>
+    <AppFooter />
   </v-app>
 </template>
 <script>
@@ -23,9 +29,11 @@ export default {
     AppHeader: () => import('@/components/appHeader.vue'),
     AppSidebar: () => import('@/components/appSidebar.vue'),
     AppUser: () => import('@/components/appUser.vue'),
+    AppFooter: () => import('@/components/appFooter.vue'),
+    HorizontalMenu: () => import('@/components/HorizontalMenu.vue'),
   },
   computed: {
-    ...mapGetters('App', ['getTitle']),
+    ...mapGetters('App', ['getTitle', 'getMenu']),
     ...mapGetters('User', ['getIsAuthenticated']),
     drawer: {
       get() {
@@ -43,7 +51,7 @@ export default {
     ...mapActions('User', ['fetchUser']),
     checkAuth() {
       if (!this.getIsAuthenticated) {
-        this.setUser(1);
+        this.fetchUser(1);
       }
     },
   },
@@ -51,4 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
+.min-100 {
+  min-height: 100%;
+}
 </style>

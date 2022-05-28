@@ -4,13 +4,24 @@ export default {
   namespaced: true,
 
   state: {
+    title: 'Оценка качества данных',
+    subtitle: 'Инструмент, позволяющий анализировать данные по вылову биологических ресурсов, с целью выявления факторов незаконной браконьерской деятельности.',
     list: [],
+    count: null,
+    limit: null,
+    pages: null,
     columns: [],
+    exportLink: '#',
   },
 
   mutations: {
-    setList(state, data) {
-      state.list = data;
+    setList(state, { items, limit, count }) {
+      const pages = (count / limit) - (count % limit);
+
+      state.list = items;
+      state.count = count;
+      state.limit = limit;
+      state.pages = pages;
     },
     setColumns(state, data) {
       state.columns = data;
@@ -18,10 +29,13 @@ export default {
   },
 
   actions: {
-    async fetchList({ commit }, { p }) {
-      // eslint-disable-next-line new-cap
-      const { data } = await Promise.resolve({ data: ['bla', p] });
-      commit('setList', data);
+    async fetchList({ commit }, query) {
+      try {
+        const { data } = await ProfileDataQualityApi.getList(query);
+        commit('setList', data);
+      } catch (error) {
+        console.log(error);
+      }
     },
     async fetchColumns({ commit }) {
       try {
@@ -37,8 +51,26 @@ export default {
     getList(state) {
       return state.list;
     },
+    getCount(state) {
+      return state.count;
+    },
+    getLimit(state) {
+      return state.limit;
+    },
+    getPages(state) {
+      return state.pages;
+    },
     getColumns(state) {
       return state.columns;
+    },
+    getExportLink(state) {
+      return state.exportLink;
+    },
+    getTitle(state) {
+      return state.title;
+    },
+    getSubtitle(state) {
+      return state.subtitle;
     },
   },
 };

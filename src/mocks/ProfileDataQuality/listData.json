@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": "01898",
+      "name": "ООО Рыболов",
+      "period": "2022-05-21",
+      "value": "100500",
+      "criteriaCount": "2",
+      "wrongValueSum": "170880845",
+      "propabilityMax": "0.8152"
+    }
+  ],
+  "count": 10,
+  "page": 1,
+  "limit": 5
+}

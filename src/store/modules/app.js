@@ -3,7 +3,17 @@ export default {
 
   state: {
     title: 'Модуль поиска аномалий в данных о рыболовстве',
-    drawer: true,
+    drawer: false,
+    menu: [
+      {
+        name: 'about',
+        text: 'О проекте',
+      },
+      {
+        name: 'contacts',
+        text: 'Контакты',
+      },
+    ],
   },
 
   mutations: {
@@ -23,6 +33,9 @@ export default {
     },
     getDrawer(state) {
       return state.drawer;
+    },
+    getMenu(state) {
+      return state.menu;
     },
   },
 };

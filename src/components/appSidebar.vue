@@ -4,7 +4,7 @@
     app
     clipped
     :mobile-breakpoint="0"
-    :temporary="$vuetify.breakpoint.smAndDown"
+    :temporary="true"
   >
     <slot />
   </v-navigation-drawer>

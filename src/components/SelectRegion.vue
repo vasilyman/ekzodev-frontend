@@ -1,12 +1,15 @@
 <template>
   <v-autocomplete
-    v-model="model"
+    v-model="region"
     :items="items"
     item-text="region"
     item-value="id_region"
     label="Регион"
     placeholder="Начните печатать"
     outlined
+    rounded
+    dense
+    clearable
   ></v-autocomplete>
 </template>
 
@@ -17,7 +20,7 @@ import RegionsModule from '@/store/modules/Regions';
 export default {
   name: 'SelectRegion',
   props: {
-    value: Object,
+    value: [String, Number],
   },
   data() {
     return {

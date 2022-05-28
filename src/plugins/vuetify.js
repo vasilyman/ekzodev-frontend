@@ -9,4 +9,12 @@ export default new Vuetify({
     locales: { ru },
     current: 'ru',
   },
+  theme: {
+    themes: {
+      light: {
+        primary: '#4472CA',
+        secondary: '#92B4F4',
+      },
+    },
+  },
 });

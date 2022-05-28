@@ -1,12 +1,14 @@
 import { setupWorker } from 'msw';
 
 import userHandler from './user/userHandler';
-import ProfileDataQualityHandler from './ProfileDataQuality/ProfileDataQualityHandler';
+import ProfileDataQualityColumnsHandler from './ProfileDataQuality/ProfileDataQualityColumnsHandler';
+import ProfileDataQualityListHandler from './ProfileDataQuality/ProfileDataQualityListHandler';
 import RegionsHandler from './Regions/RegionsHandler';
 
 const handlers = [
   userHandler,
-  ProfileDataQualityHandler,
+  ProfileDataQualityColumnsHandler,
+  ProfileDataQualityListHandler,
   RegionsHandler,
 ];
 
