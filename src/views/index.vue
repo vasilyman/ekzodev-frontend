@@ -37,9 +37,11 @@
           <h3 class="my-3">Отчет</h3>
         </v-col>
         <v-col cols="auto">
-          <a :href="getExportLink">
-            <span class=" primary--text">Экспортировать в Excel</span>
-            <v-icon x-small class="primary--text">mdi-arrow-right</v-icon>
+          <a :href="getExportLink" class="text-decoration-none">
+            <span class=" primary--text text-decoration-underline">Экспортировать в Excel</span>
+            <v-icon small class="primary--text ml-1">
+              mdi-content-save-outline
+            </v-icon>
           </a>
         </v-col>
       </v-row>
@@ -51,6 +53,7 @@
             :pages="getPages"
             :list="getList"
             :columns="getColumns"
+            :query="query"
           ></DataTable>
         </v-col>
       </v-row>
@@ -61,7 +64,6 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import ProfileDataQualityModule from '@/store/modules/ProfileDataQuality';
 
 export default {
   name: 'IndexPage',
@@ -72,10 +74,10 @@ export default {
   },
   data() {
     return {
-      page: 0,
+      page: 1,
       region: null,
       searchValue: null,
-      dateRange: null,
+      dateRange: ['2022-04-01', '2022-04-30'],
     };
   },
   computed: {
@@ -113,12 +115,6 @@ export default {
   },
   created() {
     this.fetchColumns();
-  },
-  beforeCreate() {
-    if (!this.$store.hasModule('ProfileDataQuality')) this.$store.registerModule('ProfileDataQuality', ProfileDataQualityModule);
-  },
-  destroyed() {
-    if (this.$store.hasModule('ProfileDataQuality')) this.$store.unregisterModule('ProfileDataQuality');
   },
 };
 </script>

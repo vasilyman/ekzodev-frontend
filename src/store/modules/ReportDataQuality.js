@@ -1,13 +1,10 @@
-import ProfileDataQualityApi from '@/api/ProfileDataQualityApi';
+import ReportDataQualityApi from '@/api/ReportDataQualityApi';
 
 export default {
   namespaced: true,
 
   state: {
-    title: 'Оценка качества данных',
-    subtitle: 'Инструмент, позволяющий анализировать данные по вылову биологических ресурсов, с целью выявления факторов незаконной браконьерской деятельности.',
     list: [],
-    item: {},
     count: null,
     limit: null,
     pages: null,
@@ -27,15 +24,12 @@ export default {
     setColumns(state, data) {
       state.columns = data;
     },
-    setItem(state, data) {
-      state.item = data;
-    },
   },
 
   actions: {
     async fetchList({ commit }, query) {
       try {
-        const { data } = await ProfileDataQualityApi.getList(query);
+        const { data } = await ReportDataQualityApi.getList(query);
         commit('setList', data);
       } catch (error) {
         console.log(error);
@@ -43,16 +37,8 @@ export default {
     },
     async fetchColumns({ commit }) {
       try {
-        const { data } = await ProfileDataQualityApi.getColumns();
+        const { data } = await ReportDataQualityApi.getColumns();
         commit('setColumns', data);
-      } catch (error) {
-        console.log(error);
-      }
-    },
-    async fetchItem({ commit }, id) {
-      try {
-        const { data } = await ProfileDataQualityApi.getItem(id);
-        commit('setItem', data);
       } catch (error) {
         console.log(error);
       }
@@ -83,12 +69,6 @@ export default {
     },
     getSubtitle(state) {
       return state.subtitle;
-    },
-    getItem(state) {
-      return state.item;
-    },
-    getItemName(state) {
-      return state.item?.name;
     },
   },
 };

@@ -32,9 +32,11 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 import RegionsModule from '@/store/modules/Regions';
+import rangeToTextMixin from '@/mixins/filters/rangeToText';
 
 export default {
   name: 'SelectPeriod',
+  mixins: [rangeToTextMixin],
   props: {
     value: Array,
   },
@@ -65,11 +67,6 @@ export default {
   },
   methods: {
     ...mapActions('Regions', ['fetchList']),
-  },
-  filters: {
-    rangeToText(val) {
-      return Array.isArray(val) ? val.join(' - ') : val;
-    },
   },
   created() {
     this.fetchList();

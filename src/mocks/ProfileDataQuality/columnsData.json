@@ -18,7 +18,8 @@
   },
   {
     "name": "criteriaCount",
-    "text": "Аномалии в отчетах (кол-во критериев)"
+    "text": "Аномалии в отчетах (кол-во критериев)",
+    "type": "details"
   },
   {
     "name": "wrongValueSum",

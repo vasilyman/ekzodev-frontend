@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "01898",
+      "fish": "Семга",
+      "date": "2022-05-21",
+      "value": "100500",
+      "unit": "шт",
+      "typo": "0.128",
+      "wrongValueEmpty": "0.23",
+      "wrongValueMl": "0.56",
+      "wrongSku": "0.89",
+      "badCert": "0.3521",
+      "forcePrice": "0.265",
+      "wrongValue": "1708845",
+      "propability": "0.8152"
+    }
+  ],
+  "count": 10,
+  "page": 1,
+  "limit": 5
+}

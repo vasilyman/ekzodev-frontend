@@ -1,0 +1,63 @@
+[
+  {
+    "name": "id",
+    "text": "ID"
+  },
+  {
+    "name": "date",
+    "text": "Дата",
+    "type": "date"
+  },
+  {
+    "name": "fish",
+    "text": "Тип рыбы"
+  },
+  {
+    "name": "value",
+    "text": "Объем добычи"
+  },
+  {
+    "name": "unit",
+    "text": "Ед.изм."
+  },
+  {
+    "name": "typo",
+    "text": "Опечатка или умышленно",
+    "type": "criteria"
+  },
+  {
+    "name": "wrongValueEmpty",
+    "text": "Записи отсутствуют в одном из источников",
+    "type": "criteria"
+  },
+  {
+    "name": "wrongValueMl",
+    "text": "Отличается объем за аналогичный период с поправками на сезонность и проч.",
+    "type": "criteria"
+  },
+  {
+    "name": "wrongSku",
+    "text": "Подмена sku вид рыбы",
+    "type": "criteria"
+  },
+  {
+    "name": "badCert",
+    "text": "Нет сертификата",
+    "type": "criteria"
+  },
+  {
+    "name": "forcePrice",
+    "text": "Увеличена стоимость за счет подмена SQU на более дорогую продукцию",
+    "type": "criteria"
+  },
+  {
+    "name": "wrongValue",
+    "text": "Предполагаемый объем нарушения (РУБ.)",
+    "type": "criteria"
+  },
+  {
+    "name": "propability",
+    "text": "Вероятность правонарушения с учетом весов признаков",
+    "type": "criteria"
+  }
+]

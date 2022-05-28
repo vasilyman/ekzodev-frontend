@@ -15,6 +15,13 @@ class ProfileDataQualityApi {
       params,
     });
   }
+
+  static getItem(id) {
+    return API.request({
+      method: 'GET',
+      url: `api/v1/profileDataQuality/get/${id}`,
+    });
+  }
 }
 
 export default ProfileDataQualityApi;
